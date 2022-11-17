@@ -12,7 +12,6 @@ function getCurrentDate() {
 
 async function fetchCurrentKwh() {
 	const url = `https://odegdcpnma.execute-api.eu-west-2.amazonaws.com/development/prices?dno=19&voltage=LV&start=${getCurrentDate()}&end=${getCurrentDate()}`;
-	console.log(url);
 	const response = await axios.get(url);
 	const json = response.data;
 	const baseCost = json.data.data[0].Overall;
